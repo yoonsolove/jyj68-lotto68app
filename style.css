@@ -1,0 +1,176 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* 상단 정렬로 변경 */
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 20px; /* 여백 추가 */
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 50px; /* 상단 여백 추가 */
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 25px;
+    font-size: 2em;
+}
+
+.input-section, .pattern-options, .generate-section, .results-section {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+.results-section {
+    border-bottom: none; /* 마지막 섹션은 선 없음 */
+    margin-bottom: 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: bold;
+    text-align: left;
+}
+
+input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+}
+
+.option-group, .option-grid {
+    display: flex;
+    flex-wrap: wrap; /* 반응형을 위해 추가 */
+    justify-content: flex-start;
+    gap: 15px; /* 항목 간 간격 */
+    margin-bottom: 15px;
+}
+
+.option-grid > div {
+    flex: 1 1 calc(50% - 15px); /* 2열로 배치 */
+    max-width: calc(50% - 15px);
+    text-align: left;
+}
+
+.option-group input[type="checkbox"], .option-grid input[type="checkbox"] {
+    margin-right: 8px;
+    transform: scale(1.2); /* 체크박스 크기 키우기 */
+    vertical-align: middle;
+}
+
+.option-group label, .option-grid label {
+    display: inline-block;
+    font-weight: normal;
+    color: #333;
+    margin-bottom: 0;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+    margin: 5px; /* 버튼 간 간격 */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#lottoNumbers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* 반응형을 위해 추가 */
+    gap: 10px;
+    margin-top: 20px;
+    min-height: 80px; /* 번호가 없을 때도 높이 유지 */
+}
+
+.lotto-ball {
+    width: 60px;
+    height: 60px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8em;
+    font-weight: bold;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    animation: pop-in 0.3s ease-out;
+}
+
+@keyframes pop-in {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.pattern-summary {
+    margin-top: 20px;
+    background-color: #e9ecef;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: left;
+    color: #333;
+    line-height: 1.6;
+}
+
+.pattern-summary p {
+    margin: 5px 0;
+}
+
+.message-area {
+    margin-top: 20px;
+    color: red;
+    font-weight: bold;
+}
+
+/* 번호별 색상 (예시) */
+.lotto-ball[data-range="1-10"] { background-color: #FBC400; } /* 노란색 */
+.lotto-ball[data-range="11-20"] { background-color: #69C8F8; } /* 파란색 */
+.lotto-ball[data-range="21-30"] { background-color: #FF7272; } /* 빨간색 */
+.lotto-ball[data-range="31-40"] { background-color: #AAAAAA; } /* 회색 */
+.lotto-ball[data-range="41-45"] { background-color: #B0D840; } /* 초록색 */
+
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .container {
+        margin-top: 20px;
+        padding: 20px;
+    }
+    h1 {
+        font-size: 1.8em;
+    }
+    .lotto-ball {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5em;
+    }
+    .option-grid > div {
+        flex: 1 1 100%; /* 모바일에서는 1열로 */
+        max-width: 100%;
+    }
+}

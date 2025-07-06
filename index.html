@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>행운의 로또 번호 추출기</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>행운의 로또 번호 추출기</h1>
+        <div class="input-section">
+            <label for="excludeNumbers">제외할 번호 (쉼표로 구분):</label>
+            <input type="text" id="excludeNumbers" placeholder="예: 1, 10, 45">
+            <div class="option-group">
+                <input type="checkbox" id="excludeRecentUnused">
+                <label for="excludeRecentUnused">최근 4개월 미출현수 제외</label>
+            </div>
+        </div>
+
+        <div class="pattern-options">
+            <h2>패턴 분석 기준 (중복 선택 가능)</h2>
+            <div class="option-grid">
+                <div>
+                    <input type="checkbox" id="freqAnalysis">
+                    <label for="freqAnalysis">출현 빈도 분석</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="oddEvenBalance">
+                    <label for="oddEvenBalance">홀짝 비율 균형</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="lowHighBalance">
+                    <label for="lowHighBalance">저고 비율 균형</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="consecutiveNumbers">
+                    <label for="consecutiveNumbers">연속 번호 고려</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="endNumberBalance">
+                    <label for="endNumberBalance">끝수 비율 균형</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="prevWinningAvoid">
+                    <label for="prevWinningAvoid">최근 당첨 번호 피하기</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="generate-section">
+            <button id="generateButton">번호 생성</button>
+            <button id="resetButton">초기화</button>
+        </div>
+
+        <div class="results-section">
+            <h2>생성된 번호</h2>
+            <div id="lottoNumbers" class="lotto-balls">
+                </div>
+            <div id="patternSummary" class="pattern-summary">
+                </div>
+        </div>
+        <div class="message-area" id="messageArea"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="data.js"></script> </body>
+</html>
